@@ -16,7 +16,7 @@ const auth = new google.auth.JWT(
 );
 
 const sheets = google.sheets({ version: "v4", auth });
-const SPREADSHEET_ID = "https://docs.google.com/spreadsheets/d/1v9z4kEX5k6tpuTg_D7SCoNJubxmTHQjt53a4x7kd6D8/edit?usp=sharing"; // paste your Google Sheet ID
+const SPREADSHEET_ID = "1v9z4kEX5k6tpuTg_D7SCoNJubxmTHQjt53a4x7kd6D8"; // paste your Google Sheet ID
 
 const app = express();
 app.use(bodyParser.json());
