@@ -4,7 +4,9 @@ import { google } from "googleapis";
 import fs from "fs";
 
 // 🔹 Load Google credentials
-const credentials = JSON.parse(fs.readFileSync("credentials.json"));
+// const credentials = JSON.parse(fs.readFileSync("credentials.json"));
+const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
+
 const { client_email, private_key } = credentials;
 
 // 🔹 Setup Google Sheets API
