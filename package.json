@@ -1,0 +1,11 @@
+{
+  "name": "realflow-webhook",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.19.2",
+    "body-parser": "^1.20.2",
+    "googleapis": "^127.0.0"
+  }
+}
