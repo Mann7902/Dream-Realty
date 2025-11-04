@@ -110,6 +110,7 @@ app.post("/webhook", async (req, res) => {
     const budget = normalizeBudget(result.budget);
     const urgency = result.urgency || "";
     const notes = result.notes || "";
+    const role = result.role || "";
 
     // 🟢 Prepare clean row
     const newRow = [
@@ -117,6 +118,7 @@ app.post("/webhook", async (req, res) => {
       name,
       phone,
       email,
+      role,
       propertyType,
       area,
       budget,
@@ -128,7 +130,7 @@ app.post("/webhook", async (req, res) => {
     // 🧾 Save to Google Sheets
     await sheets.spreadsheets.values.append({
       spreadsheetId: SPREADSHEET_ID,
-      range: "Sheet1!A:J",
+      range: "Sheet1!A:K",
       valueInputOption: "USER_ENTERED",
       requestBody: { values: [newRow] },
     });
